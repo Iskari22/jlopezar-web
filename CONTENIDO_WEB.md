@@ -95,7 +95,7 @@ Busca en la web referencias de páginas personales de analistas internacionales,
 ### El libro
 - **Título:** *El eje del mundo que viene: Cómo el Indo-Pacífico está transformando el orden global*
 - **Editorial:** Ariel (Grupo Planeta), Barcelona, 2026. Monografía de autor único. Publicado el 15 de abril de 2026.
-- **Hitos:** 2.ª edición en noviembre de 2026; 3.ª edición prevista para la campaña de Navidad 2026; n.º 1 en la categoría Ciencias Militares de Amazon.es; a la venta también en EE. UU. e Hispanoamérica.
+- **Hitos:** 2.ª edición en junio de 2026; 3.ª edición prevista para la campaña de Navidad 2026; n.º 1 en la categoría Ciencias Militares de Amazon.es; a la venta también en EE. UU. e Hispanoamérica.
 - **Tesis (para redactar la descripción, en tono editorial):** el Indo-Pacífico se ha convertido en el nuevo eje geopolítico del orden global; el libro integra Derecho internacional público, Relaciones Internacionales y estudios de seguridad para explicar al lector en español por qué el centro de gravedad del mundo se desplaza hacia Asia. Idea fuerza: "el siglo XXI será el siglo asiático".
 - **Recorrido académico:** propuesta de sesión *Author Meets Critics* sobre el libro en el congreso de la Association for Asian Studies (AAS) `[PENDIENTE de confirmar aceptación; no mostrar hasta confirmar]`.
 
