@@ -59,24 +59,27 @@
 
   /* ---------- cifras ---------- */
   var APARICIONES = MEDIOS.filter(function (m) { return m.tipo !== "resena" && m.tipo !== "evento"; }).length;
-  var COLUMNAS_ABC = ARTICULOS.filter(function (a) { return a.medio === "ABC"; }).length;
+  // Piezas en ABC: se cuentan desde ARTICULOS, con un mínimo de 20 (cifra del CV de noviembre de 2026;
+  // en articulos.js hay 19, falta añadir una). Producción académica: también según el CV.
+  var COLUMNAS_ABC = Math.max(20, ARTICULOS.filter(function (a) { return a.medio === "ABC"; }).length);
+  var ART_REVISTAS = 14, CAPITULOS = 22;
   function renderFigures() {
     var el = $("#figures"); if (!el) return;
     var redondeo = APARICIONES >= 20 ? Math.floor(APARICIONES / 10) * 10 : APARICIONES;
     var figs = lang === "en" ? [
-      [redondeo + "<sup>+</sup>", "media appearances since the book's release"],
-      [COLUMNAS_ABC, "opinion pieces in ABC"],
+      [redondeo + "<sup>+</sup>", "appearances on television, radio and in the press"],
+      [COLUMNAS_ABC, "pieces in ABC since 2025, two of them on the «Tercera» page"],
       ["2<sup>nd</sup>", "edition of the book, seven months after publication"],
-      ["No. 1", "in Military Science on Amazon.es"],
-      ["9", "consecutive International Studies Association conventions"],
-      [LUGARES.length, "cities with conferences, research stays and teaching"]
+      ["No. 1", "in Military Science (Amazon.es); No. 4 in International Relations and Globalisation"],
+      [ART_REVISTAS + CAPITULOS, ART_REVISTAS + " journal articles and " + CAPITULOS + " book chapters"],
+      ["9", "consecutive International Studies Association conventions"]
     ] : [
-      [redondeo + "<sup>+</sup>", "apariciones en medios desde la publicación del libro"],
-      [COLUMNAS_ABC, "columnas y análisis en ABC"],
+      [redondeo + "<sup>+</sup>", "apariciones en televisión, radio y prensa"],
+      [COLUMNAS_ABC, "piezas en ABC desde 2025, dos de ellas Terceras"],
       ["2.ª", "edición del libro, a los siete meses de su publicación"],
-      ["N.º 1", "en Ciencias Militares en Amazon.es"],
-      ["9", "convenciones consecutivas de la International Studies Association"],
-      [LUGARES.length, "ciudades con conferencias, estancias y docencia"]
+      ["N.º 1", "en Ciencias Militares (Amazon.es); n.º 4 en Relaciones Internacionales y Globalización"],
+      [ART_REVISTAS + CAPITULOS, "artículos en revistas (" + ART_REVISTAS + ") y capítulos de libro (" + CAPITULOS + ")"],
+      ["9", "convenciones consecutivas de la International Studies Association"]
     ];
     el.innerHTML = figs.map(function (f) {
       return '<div class="fig"><b>' + f[0] + "</b><span>" + esc(f[1]) + "</span></div>";
@@ -184,7 +187,9 @@
   function initLog() {
     renderFilters(); renderLog();
     var intro = $("#mediosIntro");
-    if (intro) intro.textContent = LOG.length + " entrevistas, tertulias, análisis y actos desde la publicación del libro en abril de 2026, de la tertulia semanal de geopolítica en Negocios TV a RNE, France 24, Onda Cero o COPE.";
+    if (intro) intro.textContent = LOG.length + " entrevistas, tertulias, análisis y actos, la gran mayoría desde la publicación del libro en abril de 2026: de la tertulia semanal de geopolítica en Negocios TV a RNE, TVE, France 24, Onda Cero o COPE.";
+    var mi = $("#mundoIntro");
+    if (mi && LUGARES.length) mi.textContent = LUGARES.length + " ciudades en cuatro continentes: nueve convenciones consecutivas de la International Studies Association, un año de investigación en Japón con la Japan Foundation y docencia invitada en Europa y América.";
     var more = $("#moreBtn");
     if (more) more.addEventListener("click", function () {
       var wasAll = logState.all;
@@ -363,15 +368,15 @@
 
   /* ---------- biografías ---------- */
   var BIOS = {
-    es: {
-      corta: "Juan Luis López Aranguren es profesor de Relaciones Internacionales y Derecho internacional público, especialista en el Indo-Pacífico, China y Japón. Autor de El eje del mundo que viene (Ariel, 2026), es tertuliano de geopolítica en Negocios TV y colaborador de ABC. Habla japonés e investigó durante un año en Japón con la Japan Foundation.",
-      media: "Juan Luis López Aranguren es profesor de Relaciones Internacionales y Derecho internacional público y analista especializado en el Indo-Pacífico, China y Japón. Es autor de El eje del mundo que viene. Cómo el Indo-Pacífico está transformando el orden global (Ariel, 2026), que llegó a su segunda edición siete meses después de su publicación. Es tertuliano de geopolítica en Negocios TV, firma artículos de opinión en ABC y analiza la actualidad internacional en radio y televisión. Periodista de formación y doctor en Comunicación, investigó durante doce meses en Japón con una beca de la Japan Foundation. Ha presentado su trabajo en nueve convenciones consecutivas de la International Studies Association. Habla japonés, inglés, catalán, francés y chino mandarín.",
-      larga: "Juan Luis López Aranguren es profesor de Relaciones Internacionales y Derecho internacional público. Su trabajo se centra en el Indo-Pacífico, la geopolítica de Asia Oriental, China y Japón, la diplomacia pública y científico-tecnológica, la comunicación internacional y la guerra híbrida.\n\nEs autor de El eje del mundo que viene. Cómo el Indo-Pacífico está transformando el orden global (Ariel, Grupo Planeta, 2026), un ensayo que integra el Derecho internacional público, las Relaciones Internacionales y los estudios de seguridad para explicar por qué el centro de gravedad del mundo se desplaza hacia Asia. El libro alcanzó su segunda edición siete meses después de su publicación y el número uno en la categoría de Ciencias Militares de Amazon.es.\n\nEs tertuliano de geopolítica en Negocios TV y colaborador de ABC, y ha analizado la actualidad internacional en RNE, France 24, Cuatro, Onda Cero y COPE, entre otros medios.\n\nPeriodista de formación, doctor en Comunicación con Mención Internacional y especialista en Estudios de Asia Oriental, obtuvo la Japan Foundation Japanese Studies Fellowship 2016/2017, con la que investigó doce meses en Japón. Ha realizado estancias de investigación y docencia en América, Europa, Asia y Oceanía, y ha presentado su trabajo en nueve convenciones consecutivas de la International Studies Association, en cuya Sección de International Communication forma parte de la Junta Directiva desde 2025.\n\nSus más de treinta publicaciones académicas han aparecido en editoriales como Routledge, Edward Elgar, Aranzadi, Marcial Pons y Tirant lo Blanch. Habla español, inglés, japonés, catalán, francés y chino mandarín.",
+    "es": {
+      "corta": "Juan Luis López Aranguren es profesor de Relaciones Internacionales y Derecho internacional público, especialista en geopolítica de Asia y el Indo-Pacífico, China y Japón. Autor de El eje del mundo que viene (Ariel, 2026), es columnista de ABC y tertuliano de geopolítica en Negocios TV. Habla japonés e investigó un año en Japón con la Japan Foundation.",
+      "media": "Juan Luis López Aranguren es profesor de Relaciones Internacionales y Derecho internacional público, especializado en geopolítica, Asia e Indo-Pacífico, seguridad internacional y guerra de narrativas. Es autor de El eje del mundo que viene. Cómo el Indo-Pacífico está transformando el orden global (Ariel, 2026), que llegó a su segunda edición siete meses después de su publicación. Columnista de ABC desde 2025 y tertuliano de geopolítica en Negocios TV, analiza la actualidad internacional en radio y televisión. Doctor Internacional en Comunicación y licenciado en Periodismo, trabajó como periodista en Diario de Navarra e investigó doce meses en Japón con la Japan Foundation. Ha participado en nueve convenciones consecutivas de la International Studies Association. Habla japonés, inglés, catalán, francés y chino mandarín.",
+      "larga": "Juan Luis López Aranguren es profesor de Relaciones Internacionales y Derecho internacional público. Está especializado en geopolítica, Asia e Indo-Pacífico, seguridad internacional y guerra de narrativas, con especial atención a China y Japón y a la diplomacia pública.\n\nEs autor de El eje del mundo que viene. Cómo el Indo-Pacífico está transformando el orden global (Ariel, Grupo Planeta, 2026), un ensayo que integra el Derecho internacional público, las Relaciones Internacionales y los estudios de seguridad para explicar por qué el centro de gravedad del mundo se desplaza hacia Asia. Llegó a su segunda edición en siete meses y fue número uno en Ciencias Militares en Amazon.es.\n\nColumnista de ABC, donde ha publicado veinte piezas desde 2025, y tertuliano de geopolítica en Negocios TV, ha analizado la actualidad internacional en RNE, TVE, France 24, Cuatro, Cadena SER, Onda Cero y COPE, entre otros medios.\n\nDoctor Internacional en Comunicación y licenciado en Periodismo, con experiencia como periodista en Diario de Navarra, investigó doce meses en Japón con la Japan Foundation Japanese Studies Fellowship. Ha realizado estancias de investigación y docencia en América, Europa, Asia y Oceanía, ha participado en nueve convenciones consecutivas de la International Studies Association y forma parte desde 2025 del Governing Board de su International Communication Section.\n\nTiene reconocidos dos sexenios de investigación y ha publicado catorce artículos en revistas académicas y veintidós capítulos de libro en editoriales como Routledge, Edward Elgar, Aranzadi y Tirant lo Blanch. Habla español, inglés, japonés, catalán, francés y chino mandarín."
     },
-    en: {
-      corta: "Juan Luis López Aranguren is a Professor of International Relations and Public International Law specialising in the Indo-Pacific, China and Japan. Author of El eje del mundo que viene (Ariel, 2026), he is a geopolitics panellist on Negocios TV and writes for ABC. He speaks Japanese and spent a year researching in Japan with the Japan Foundation.",
-      media: "Juan Luis López Aranguren is a Professor of International Relations and Public International Law and an analyst specialising in the Indo-Pacific, China and Japan. He is the author of El eje del mundo que viene (The Axis of the Coming World: How the Indo-Pacific Is Transforming the Global Order; Ariel, 2026), which went into its second edition seven months after publication. He is a regular geopolitics panellist on Negocios TV, writes opinion pieces for ABC and comments on international affairs on Spanish radio and television. A journalist by training with a PhD in Communication, he spent twelve months researching in Japan as a Japan Foundation fellow. He has presented his work at nine consecutive International Studies Association conventions and speaks Japanese, English, Catalan, French and Mandarin Chinese.",
-      larga: "Juan Luis López Aranguren is a Professor of International Relations and Public International Law. His work focuses on the Indo-Pacific, East Asian geopolitics, China and Japan, public and science-and-technology diplomacy, international communication and hybrid warfare.\n\nHe is the author of El eje del mundo que viene. Cómo el Indo-Pacífico está transformando el orden global (Ariel, Grupo Planeta, 2026), a book that brings together public international law, international relations and security studies to explain to Spanish-speaking readers why the world's centre of gravity is shifting towards Asia. It went into its second edition seven months after publication and reached number one in the Military Science category on Amazon.es.\n\nHe is a regular geopolitics panellist on Negocios TV and a contributor to the Spanish daily ABC, and has discussed international affairs on RNE, France 24, Cuatro, Onda Cero and COPE, among other outlets.\n\nA journalist by training, he holds a PhD in Communication with International Mention and a degree in East Asian Studies. As the recipient of the Japan Foundation Japanese Studies Fellowship 2016/2017, he spent twelve months conducting research in Japan. He has held research and teaching positions in the Americas, Europe, Asia and Oceania, has presented his work at nine consecutive International Studies Association conventions, and has served since 2025 on the Executive Board of the ISA's International Communication Section.\n\nHis more than thirty academic publications have appeared with publishers including Routledge, Edward Elgar, Aranzadi, Marcial Pons and Tirant lo Blanch. He speaks Spanish, English, Japanese, Catalan, French and Mandarin Chinese.",
+    "en": {
+      "corta": "Juan Luis López Aranguren is a Professor of International Relations and Public International Law specialising in the Indo-Pacific, China and Japan. Author of El eje del mundo que viene (Ariel, 2026), he is an ABC columnist and geopolitics panellist on Negocios TV. A Japanese speaker, he spent a year researching in Japan with the Japan Foundation.",
+      "media": "Juan Luis López Aranguren is a Professor of International Relations and Public International Law specialising in geopolitics, Asia and the Indo-Pacific, international security and narrative warfare. He is the author of El eje del mundo que viene (The Axis of the Coming World: How the Indo-Pacific Is Transforming the Global Order; Ariel, 2026), which went into a second edition seven months after publication. A columnist for ABC since 2025 and a regular geopolitics panellist on Negocios TV, he comments on international affairs on Spanish radio and television. He holds an International PhD in Communication and a degree in Journalism, worked as a journalist at Diario de Navarra, and spent twelve months researching in Japan with the Japan Foundation. He speaks Japanese, English, Catalan, French and Mandarin Chinese.",
+      "larga": "Juan Luis López Aranguren is a Professor of International Relations and Public International Law. He specialises in geopolitics, Asia and the Indo-Pacific, international security and narrative warfare, with a particular focus on China, Japan and public diplomacy.\n\nHe is the author of El eje del mundo que viene. Cómo el Indo-Pacífico está transformando el orden global (Ariel, Grupo Planeta, 2026), a book that brings together public international law, international relations and security studies to explain why the world's centre of gravity is shifting towards Asia. It went into a second edition within seven months and reached number one in Military Science on Amazon.es.\n\nA columnist for ABC, where he has published twenty pieces since 2025, and a geopolitics panellist on Negocios TV, he has discussed international affairs on RNE, TVE, France 24, Cuatro, Cadena SER, Onda Cero and COPE, among other outlets.\n\nHe holds an International PhD in Communication and a degree in Journalism, has worked as a journalist at Diario de Navarra, and spent twelve months researching in Japan with a Japan Foundation Japanese Studies Fellowship. He has held research and teaching positions in the Americas, Europe, Asia and Oceania, has taken part in nine consecutive International Studies Association conventions, and has served since 2025 on the Governing Board of the ISA's International Communication Section.\n\nHe holds two accredited six-year research periods (sexenios) and has published fourteen journal articles and twenty-two book chapters with publishers including Routledge, Edward Elgar, Aranzadi and Tirant lo Blanch. He speaks Spanish, English, Japanese, Catalan, French and Mandarin Chinese."
     }
   };
   var bioKey = "corta";
@@ -411,26 +416,36 @@
   /* ---------- contacto ---------- */
   function initContact() {
     var email = (CONFIG.email || "").trim();
+    var acad = (CONFIG.emailAcademico || "").trim();
+    var mail = function (e) { return '<a href="mailto:' + esc(e) + '">' + esc(e) + "</a>"; };
     var v = $("#emailV");
     if (v) {
-      if (email) v.innerHTML = '<a href="mailto:' + esc(email) + '">' + esc(email) + "</a>";
+      if (email) v.innerHTML = mail(email);
+      else if (acad) v.parentNode.hidden = true;
       else v.textContent = EMAIL_PH;
     }
-    if (email) $$('a[href="#contacto"].btn').forEach(function (a) { a.href = "mailto:" + email; });
-    var c = $("#copyEmail");
-    if (c) {
-      if (!email) c.hidden = true;
-      c.addEventListener("click", function () {
-        copyText(email, v, lang === "en" ? "Email copied" : "Email copiado");
+    var row = $("#emailAcadRow");
+    if (row && acad) { $("#emailAcadV").innerHTML = mail(acad); row.hidden = false; }
+    var main = email || acad;
+    if (main) $$('a[href="#contacto"].btn').forEach(function (a) { a.href = "mailto:" + main; });
+    var c = $("#copyEmail"); if (c && !email) c.hidden = true;
+    $$("[data-copy]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var val = (CONFIG[b.getAttribute("data-copy")] || "").trim();
+        if (val) copyText(val, b.previousElementSibling, lang === "en" ? "Email copied" : "Email copiado");
       });
+    });
+    var li = (CONFIG.linkedin || "").trim(), liA = $("#liLink");
+    if (liA) {
+      if (/^https:\/\/([a-z]+\.)?linkedin\.com\//.test(li)) {
+        liA.href = li;
+        $(".v", liA).textContent = li.replace(/^https:\/\/(www\.)?/, "").replace(/\/$/, "");
+      } else if (!li) liA.hidden = true;
     }
-    var li = (CONFIG.linkedin || "").trim();
-    if (li && /^https:\/\/([a-z]+\.)?linkedin\.com\//.test(li)) {
-      var links = $("#contacto .links");
-      if (links) links.insertAdjacentHTML("beforeend",
-        '<a href="' + esc(li) + '" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">' +
-        esc(li.replace(/^https:\/\/(www\.)?/, "").replace(/\/$/, "")) + "</span></a>");
-    }
+    var x = (CONFIG.x || "").replace(/^@/, "").trim();
+    if (x && $("#xLink")) { $("#xLink").href = "https://x.com/" + encodeURIComponent(x); $("#xV").textContent = "@" + x; }
+    var o = (CONFIG.orcid || "").trim();
+    if (o && $("#orcidLink")) { $("#orcidLink").href = "https://orcid.org/" + encodeURIComponent(o); $("#orcidV").textContent = o; }
   }
 
   /* ---------- idioma ---------- */
@@ -438,7 +453,7 @@
     "nav.libro": "The book", "nav.medios": "Media", "nav.articulos": "Articles", "nav.investigacion": "Research",
     "nav.mundo": "Worldwide", "nav.trayectoria": "Career", "nav.prensa": "Press", "nav.contacto": "Contact",
     "hero.eyebrow": "Professor of International Relations and Public International Law",
-    "hero.lede": "Analyst of the <strong>Indo-Pacific, China, Japan and the global order</strong>. Author of <em>El eje del mundo que viene</em> (Ariel) and geopolitics panellist on Negocios TV.",
+    "hero.lede": "Analyst of the <strong>Indo-Pacific, China, Japan and the global order</strong>. Author of <em>El eje del mundo que viene</em> (Ariel), ABC columnist and geopolitics panellist on Negocios TV.",
     "hero.cta1": "Request an interview", "hero.cta2": "The book",
     "hero.cap": "Casa Asia, Madrid · October 2026",
     "seen": "Has analysed current affairs on",
@@ -450,14 +465,15 @@
     "libro.m2": "Third edition planned for the Christmas season",
     "libro.m3": "In the Military Science category on Amazon.es",
     "libro.m4": "On sale in Spain, the United States and Latin America",
-    "libro.buy": "Buy the book", "libro.reviews": "Written about the book",
+    "libro.m5": "In International Relations and Globalisation on Amazon.es, at launch",
+    "libro.buy": "Buy the book", "libro.amazon": "Buy on Amazon", "libro.reviews": "Written about the book",
     "prensa.eyebrow": "Press room", "prensa.h2": "For journalists and organisers",
     "prensa.sub": "Biographies ready to copy, high-resolution photographs and the topics he can discuss.",
     "prensa.temas": "Topics", "prensa.fotos": "Photographs",
     "bio.corta": "Short · 50 words", "bio.media": "Medium · 120", "bio.larga": "Full · 250", "bio.copy": "Copy biography",
     "contacto.eyebrow": "Contact", "contacto.h2": "Interviews, panels and lectures",
     "contacto.sub": "Available for live links, interviews in Spanish, English and Japanese, book presentations and lectures.",
-    "contacto.copy": "Copy",
+    "contacto.copy": "Copy", "contacto.acad": "Academic email",
     "footer": "Views expressed in articles and interviews are personal."
   };
   var ES = {};

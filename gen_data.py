@@ -134,7 +134,29 @@ for m in medios:
     if m["tipo"] in ("video", "otros"): m["tipo"] = "podcast"
     if m["titulo"].startswith("Entrevista (sección Internacional)"): m["titulo"] = "Entrevista sobre la cumbre Trump–Xi"
 
-medios.sort(key=lambda m: m["fecha"] or "2026-00-00", reverse=True)
+# Títulos reales y datos confirmados por el autor (CV de noviembre de 2026)
+TITULOS_CV = [  # (fecha, parte del nombre del medio, título)
+    ("2026-05-13", "El Mundo", "«Si EE. UU. no defiende militarmente Taiwán, nadie volverá a confiar en Washington»"),
+    ("2026-05-14", "El Periódico de Catalunya", "«Trump depende de Xi para evitar que Irán se convierta en su Vietnam»"),
+    ("2026-05-14", "France 24", "«Xi y Trump: el pulso entre Ormuz y la línea roja de Taiwán»"),
+    ("2026-04-30", "El Canal del Coronel", "«China dominará el planeta: el choque contra EE. UU. es inminente»"),
+    ("2026-04-13", "Capital Radio", "«Trump bloquea Ormuz: el fin del eje de poder de la II Guerra Mundial»"),
+    ("2026-05-01", "Diario de Navarra", "«El siglo XXI será el de Asia. Europa nos hemos quedado al margen de todo»"),
+    ("2026-05-04", "RNE Ràdio 4", "«L'Indopacífic com a centre de poder mundial» (en catalán)"),
+]
+for f, med, t in TITULOS_CV:
+    for m in medios:
+        if m["fecha"] == f and med in m["medio"]: m["titulo"] = t
+for m in medios:
+    if m["medio"] == "TVE – Informativos noche":
+        m["medio"] = "TVE – Telediario de la noche"; m["titulo"] = "Intervención grabada para el Telediario de la noche"
+# Medios en los que ha intervenido, sin fecha ni enlace concretos
+for med, tipo in [("Intereconomía", "tv"), ("EITB", "tv"), ("Navarra Televisión", "tv"),
+                  ("Cadena SER", "radio"), ("Aragón Radio", "radio")]:
+    medios.append(dict(fecha="", fechaTexto="Sin fecha", medio=med, tipo=tipo, titulo="", detalle="", url="", yt="", t=0,
+                       duracion="", tema="", destacado=False))
+
+medios.sort(key=lambda m: m["fecha"] or ("0000" if m["fechaTexto"] == "Sin fecha" else "2026-00-00"), reverse=True)
 
 # ---------- ARTÍCULOS ----------
 wa = wb["ABC"]

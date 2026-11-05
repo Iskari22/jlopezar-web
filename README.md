@@ -78,18 +78,21 @@ Archivo: **`docs/data/publicaciones.js`** (las instrucciones están en las prime
 
 En el mismo archivo están la **trayectoria** (`window.TRAYECTORIA`) y los **reconocimientos** (`window.RECONOCIMIENTOS`).
 
-### Poner el email y el LinkedIn
+### Cambiar el email, el LinkedIn, X u ORCID
 
-Archivo: **`docs/data/config.js`**:
+Archivo: **`docs/data/config.js`**. Ya contiene los datos actuales:
 
 ```js
 window.CONFIG = {
-  email: "su-direccion@dominio.es",
-  linkedin: "https://www.linkedin.com/in/su-perfil/"
+  email: "...",            // email principal: sale primero en Contacto y lo usa el botón «Contactar para entrevista»
+  emailAcademico: "...",   // email académico: segunda línea de Contacto
+  linkedin: "https://www.linkedin.com/in/juanluislopezaranguren",
+  x: "jlopezar",           // usuario de X, sin @
+  orcid: "0000-0002-4720-863X"
 };
 ```
 
-Con el email puesto, el bloque de contacto muestra un enlace `mailto:`, aparece el botón «Copiar» y el botón rojo «Contactar para entrevista» abre directamente el correo. Con el LinkedIn puesto, aparece su enlace en Contacto. Mientras estén vacíos, la web muestra `[EMAIL DE CONTACTO]` y no enseña LinkedIn.
+Cada email aparece en Contacto con su etiqueta y un botón «Copiar». Si deja un email vacío (`""`), esa línea desaparece. No ponga aquí teléfono, fecha de nacimiento ni dirección postal. Si cambia el LinkedIn, cámbielo también en `sameAs`, dentro del bloque `application/ld+json` de `docs/index.html`, que es lo que leen los buscadores.
 
 Opcional: en `docs/index.html` hay un formulario de contacto preparado (Formspree), dentro de un comentario. Las instrucciones están junto a él.
 
@@ -144,9 +147,20 @@ Para verla en local: `cd docs && python3 -m http.server` y abra `http://localhos
 
 ## 5. Decisiones tomadas en esta versión
 
-- **Cifra de apariciones en medios.** Cuenta televisión, radio, prensa y vídeo o pódcast (72 entradas) y se redondea a la decena inferior: «70+». No cuenta las reseñas del libro (las escriben otros) ni los actos. El registro de medios muestra 76 entradas, porque incluye los 4 actos.
-- **Cifras fijas.** «2.ª edición», «N.º 1 en Ciencias Militares (Amazon.es)» y «9 convenciones de la ISA» proceden de `CONTENIDO_WEB.md`. Las columnas en ABC (19) y las ciudades (28) se calculan desde los datos.
-- **Biografías.** Se han escrito a partir de los datos verificados, sin nombrar universidades, en tres longitudes (en español: 54, 116 y 247 palabras; en inglés: 57, 127 y 251) y están en `docs/js/app.js` (`BIOS`). La web cuenta las palabras en directo.
+- **Cifra de apariciones en medios.** Cuenta televisión, radio, prensa y vídeo o pódcast (77 entradas) y se redondea a la decena inferior: «70+». No cuenta las reseñas del libro (las escriben otros) ni los actos. El registro de medios muestra 81 entradas, porque incluye los 4 actos.
+- **Cifras de la portada (actualizadas con el CV de noviembre de 2026).** Son seis:
+  - apariciones en medios;
+  - **20 piezas en ABC desde 2025, dos de ellas Terceras**. La web cuenta las de `articulos.js` (hoy 19) y nunca muestra menos de 20;
+  - 2.ª edición;
+  - n.º 1 en Ciencias Militares y n.º 4 en Relaciones Internacionales y Globalización (Amazon.es);
+  - **36 publicaciones: 14 artículos en revistas y 22 capítulos**, según el CV y fijadas en `docs/js/app.js` (`ART_REVISTAS` y `CAPITULOS`);
+  - 9 convenciones de la ISA.
+
+  Para dejar sitio a la cifra de publicaciones, la de **28 ciudades** pasa a la introducción del mapa, donde se calcula desde los datos.
+- **Medios sin fecha.** Intereconomía, EITB, Navarra Televisión, Cadena SER y Aragón Radio están en la franja de medios y en el registro como «Sin fecha» y «Sin enlace». Se añaden en `gen_data.py`, junto con los títulos reales de siete entrevistas, para que no se pierdan al regenerar desde el Excel. La entrada de TVE del 15/05/2026 pasa a llamarse «TVE – Telediario de la noche».
+- **Trayectoria.** Se añadió la docencia invitada en la LUISS. En la Universidad Francisco de Vitoria consta la asignatura «Mundo Actual: China, India y Japón», en inglés. En el puesto de Profesor Ayudante Doctor se indica que enseña en la Universidad de Zaragoza desde 2017. El cargo en la ISA usa ahora su nombre oficial, *Governing Board* de la International Communication Section. En Reconocimientos figuran los dos sexenios (CNEAI y ACPUA) y la acreditación ANECA a Profesor Contratado Doctor.
+- **Sin cantidades de dinero.** La web no muestra el importe de ninguna beca, ayuda ni proyecto. Se han quitado también de `CONTENIDO_WEB.md`. Siguen en el historial de Git (el primer commit de `main`).
+- **Biografías.** Se han escrito a partir de los datos verificados y del CV de noviembre de 2026, sin nombrar universidades, en tres longitudes (en español: 57, 120 y 247 palabras; en inglés: 56, 127 y 255) y están en `docs/js/app.js` (`BIOS`). La web cuenta las palabras en directo.
 - **Inglés.** Se traducen el menú, la portada, el libro (con su sinopsis), la sala de prensa, las biografías, el contacto y el pie. Medios, artículos, publicaciones, mapa y trayectoria siguen en español, como pedía el encargo. El título del libro se mantiene en español, con el subtítulo traducido como referencia.
 - **Duración corregida.** En el Excel, la duración «14:46» de la tertulia de Negocios TV del 14/10/2026 (parte 2) se había convertido en una hora («14:46:00»). `gen_data.py` ahora lo corrige al leer el Excel.
 - **Galería.** El título «En plató, en antena y en el aula» se cambió por «En plató, en antena y en presentaciones», porque no hay fotos de clase. Los pies de foto describen solo lo que se ve en cada imagen.
@@ -169,8 +183,9 @@ No se ha podido abrir ninguna de estas páginas desde el entorno de trabajo (red
 
 ## 6. Pendiente de completar
 
-- [ ] **Email de contacto**: `docs/data/config.js` (`email`).
-- [ ] **LinkedIn**: `docs/data/config.js` (`linkedin`).
+- [ ] **Una pieza de ABC** que falta en `docs/data/articulos.js`: el CV cuenta 20 y el archivo tiene 19.
+- [ ] **Un artículo de revista y dos capítulos de libro** que faltan en `docs/data/publicaciones.js`: el CV cuenta 14 y 22, y el archivo tiene 13 y 20.
+- [ ] **Fecha y enlace** de las intervenciones en Intereconomía, EITB, Navarra Televisión, Cadena SER y Aragón Radio, si los tiene.
 - [ ] **URL del sitio**: sustituir `[URL DEL SITIO]` en `docs/index.html`, `docs/robots.txt` y `docs/sitemap.xml`.
 - [ ] **Enlaces de artículos antiguos** que no se han podido confirmar (en `docs/data/articulos.js`):
   - El Mundo (2022), «Las islas Senkaku y la integridad territorial de Japón» (ver la dirección candidata arriba).

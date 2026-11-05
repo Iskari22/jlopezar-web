@@ -43,10 +43,11 @@ window.PUBLICACIONES = [
 window.TRAYECTORIA = [
  {anio: "2024–", clase: "now", titulo: "Profesor Permanente Laboral de Derecho Internacional Público y Relaciones Internacionales", lugar: "Facultad de Derecho, Universidad de Zaragoza"},
  {anio: "2026", clase: "now", titulo: "Autor de «El eje del mundo que viene»", lugar: "Ariel (Grupo Planeta)"},
- {anio: "2025–", clase: "now", titulo: "Junta Directiva de la Sección de International Communication", lugar: "International Studies Association (ISA)"},
+ {anio: "2025–", clase: "now", titulo: "Governing Board de la International Communication Section", lugar: "International Studies Association (ISA)"},
  {anio: "2023–25", clase: "", titulo: "Coordinador del Área de Derecho Internacional Público", lugar: "Facultad de Derecho, Universidad de Zaragoza"},
- {anio: "2019–24", clase: "", titulo: "Profesor Ayudante Doctor", lugar: "Universidad de Zaragoza"},
- {anio: "2017–19", clase: "", titulo: "Profesor", lugar: "Universidad Francisco de Vitoria"},
+ {anio: "2023–24", clase: "", titulo: "Profesor invitado en el Máster en Seguridad Europea", lugar: "LUISS Guido Carli, Roma · «China and International Security in Asia»"},
+ {anio: "2019–24", clase: "", titulo: "Profesor Ayudante Doctor", lugar: "Universidad de Zaragoza, donde enseña desde 2017"},
+ {anio: "2017–19", clase: "", titulo: "Profesor", lugar: "Universidad Francisco de Vitoria · «Mundo Actual: China, India y Japón», en inglés"},
  {anio: "2016–17", clase: "", titulo: "Investigador postdoctoral de la Japan Foundation", lugar: "Osaka University (OSIPP) e International University of Japan"},
  {anio: "2016–", clase: "", titulo: "Investigador del Grupo de Investigación Japón", lugar: "Universidad de Zaragoza · Grupo de Referencia del Gobierno de Aragón"},
  {anio: "2013–15", clase: "", titulo: "Profesor", lugar: "Universitat Internacional de Catalunya"},
@@ -54,16 +55,18 @@ window.TRAYECTORIA = [
  {anio: "2013", clase: "edu", titulo: "Doctor en Comunicación con Mención Internacional", lugar: "Universidad de Navarra"},
  {anio: "2008–09", clase: "edu", titulo: "Máster en Análisis Político · Máster en Sociedades de Asia Oriental y Relaciones Internacionales · Licenciatura en Estudios de Asia Oriental", lugar: "Universitat Oberta de Catalunya"},
  {anio: "2007", clase: "edu", titulo: "Diploma en Lengua y Estudios Japoneses", lugar: "Kyoto University of Foreign Studies (Japón)"},
- {anio: "2005", clase: "edu", titulo: "Licenciatura en Periodismo · Diploma en Comunicación Política", lugar: "Universidad de Navarra"}
+ {anio: "2005", clase: "edu", titulo: "Licenciatura en Periodismo · Diploma en Comunicación Política", lugar: "Universidad de Navarra · experiencia como periodista en Diario de Navarra"}
 ];
 
 window.RECONOCIMIENTOS = [
  {t: "Japan Foundation Japanese Studies Fellowship 2016/2017", d: "Doce meses de investigación en Japón; único beneficiario en España en esa convocatoria. Encuesta nacional con más de 3.500 respuestas."},
- {t: "Sexenio de investigación CNEAI", d: "Periodo 2016–2024, reconocido en 2026."},
+ {t: "Dos sexenios de investigación", d: "CNEAI (periodo 2016–2024, concedido en 2026) y ACPUA (periodo 2010–2021)."},
+ {t: "Acreditación ANECA", d: "Profesor Contratado Doctor."},
  {t: "Investigador principal", d: "«Geopolítica, Derechos Humanos y Libertad Religiosa» (2025–2026); «Protección de minorías religiosas y Relaciones Internacionales» (2023–2024); «Diplomacia Cultural Aragón–Japón» (Fundación Ibercaja); Grupo de Referencia Japón (Gobierno de Aragón)."},
  {t: "Proyecto IASAC-UNIDIGITAL", d: "Inteligencia Artificial y Sistemas Autónomos Cognitivos, con nueve universidades españolas (2022–2023)."},
  {t: "Asesor del International Board", d: "Bhutan Baccalaureate Program, The Royal Academy of Bhutan (2024)."},
  {t: "Asesor extranjero de tesis doctorales", d: "L.N. Gumilyov Eurasian National University, Astana (Kazajistán), desde 2024."},
+ {t: "Governing Board, International Communication Section", d: "International Studies Association (ISA), desde 2025."},
  {t: "Evaluador científico", d: "Pacific Affairs, Routledge, Relaciones Internacionales (UAM), Sortuz, Artefactos y Kairós."},
  {t: "Innovación docente", d: "Coordinador del proyecto «Protección de minorías, derechos humanos y globalización en el aula» (2026/2027)."}
 ];

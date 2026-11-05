@@ -186,9 +186,9 @@ Tipo · medio · detalle. Buscar los enlaces según las instrucciones.
 - Profesor e investigador, Universidad de Navarra (2009–2016) y Universitat Internacional de Catalunya (2013–2015).
 
 **Becas, proyectos y reconocimientos**
-- **Japan Foundation Japanese Studies Fellowship 2016/2017**: 12 meses de investigación en Japón (International University of Japan y Osaka University – OSIPP), 48.200 €, único beneficiario en España esa convocatoria. Proyecto: "Communication, Democracy and Policy-Making in Japan", con encuesta nacional de más de 3.500 respuestas.
+- **Japan Foundation Japanese Studies Fellowship 2016/2017**: 12 meses de investigación en Japón (International University of Japan y Osaka University – OSIPP), único beneficiario en España esa convocatoria. Proyecto: "Communication, Democracy and Policy-Making in Japan", con encuesta nacional de más de 3.500 respuestas.
 - Sexenio de investigación CNEAI (periodo 2016–2024), concedido en julio de 2026.
-- Ayuda predoctoral del Gobierno de Navarra (59.800 €).
+- Ayuda predoctoral del Gobierno de Navarra.
 - Investigador principal: "Geopolítica, Derechos Humanos y Libertad Religiosa" (Universidad de Zaragoza, 2025–2026); "Protección de minorías religiosas y Relaciones Internacionales" (2023–2024); "Diplomacia Cultural Aragón–Japón" (Fundación Ibercaja–Universidad de Zaragoza); Grupo de Referencia Japón (Gobierno de Aragón, 2017, co-IP).
 - Participante en IASAC-UNIDIGITAL (Inteligencia Artificial y Sistemas Autónomos Cognitivos), Plan de Recuperación, nueve universidades (2022–2023).
 - Coordinador del proyecto de innovación docente "Protección de minorías, derechos humanos y globalización en el aula" (Universidad de Zaragoza, 2026/2027).

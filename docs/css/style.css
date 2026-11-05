@@ -382,3 +382,11 @@ footer .wrap { display: flex; justify-content: space-between; gap: 1.4rem; flex-
 .map-hint { display: none; }
 @media (max-width: 640px) { .map-hint { display: block; margin-top: .5rem; color: var(--ink-soft); } }
 .map-col { min-width: 0; }
+.milestones li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.links .em .v { margin-left: auto; }
+@media (max-width: 520px) {
+  .links > * { flex-wrap: wrap; gap: .35rem .8rem; }
+  .links .k { flex-basis: 100%; }
+  .links .v, .links .em .v { margin-left: 0; text-align: left; font-size: .94rem; overflow-wrap: normal; word-break: normal; }
+  .links .em .v { flex: 1 1 auto; min-width: 0; }
+}
