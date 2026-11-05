@@ -455,7 +455,6 @@
     "hero.eyebrow": "Professor of International Relations and Public International Law",
     "hero.lede": "Analyst of the <strong>Indo-Pacific, China, Japan and the global order</strong>. Author of <em>El eje del mundo que viene</em> (Ariel), ABC columnist and geopolitics panellist on Negocios TV.",
     "hero.cta1": "Request an interview", "hero.cta2": "The book",
-    "hero.cap": "Casa Asia, Madrid · October 2026",
     "seen": "Has analysed current affairs on",
     "libro.eyebrow": "The book · Ariel, 2026",
     "libro.h2": "El eje del mundo que viene",

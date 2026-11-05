@@ -106,7 +106,7 @@ Las fotos están en **`docs/img/`**. Para cambiar una, súbala con **el mismo no
 | `nombre-sm.webp` | versión ligera para móvil y miniaturas | 600–700 px de ancho |
 | `nombre-hd.jpg` | descarga para prensa y foto ampliada | 1600 px en el lado largo |
 
-Dónde se usa cada una: `casa-asia-1` (portada y kit de prensa), `casa-asia-2` y `casa-asia-3`, `rne-1/2/3`, `negocios-tv`, `france-24` y `retrato` (galería; `retrato` y `rne-2` también en el kit de prensa), `portada.webp` (cubierta del libro) y `og.jpg` (1200×630, la imagen que sale al compartir el enlace en X o LinkedIn). Para convertir a WebP sirve cualquier conversor gratuito, como squoosh.app.
+Dónde se usa cada una: `autor-libro` (foto de la portada, junto al nombre), `casa-asia-1` (kit de prensa y galería), `casa-asia-2` y `casa-asia-3`, `rne-1/2/3`, `negocios-tv`, `france-24` y `retrato` (galería; `retrato` y `rne-2` también en el kit de prensa), `portada.webp` (cubierta del libro) y `og.jpg` (1200×630, la imagen que sale al compartir el enlace en X o LinkedIn). Para convertir a WebP sirve cualquier conversor gratuito, como squoosh.app.
 
 Los pies de foto de la galería están en `docs/js/app.js`, en la lista `GALERIA`.
 
