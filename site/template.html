@@ -2,21 +2,27 @@
 <html lang="es">
 <head>
 <!--HEAD-->
-<title>Juan Luis López Aranguren</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Juan Luis López Aranguren · Indo-Pacífico, China, Japón y orden global</title>
+<meta name="theme-color" content="#f2f3ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1226" media="(prefers-color-scheme: dark)">
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <meta name="description" content="Juan Luis López Aranguren, profesor de Relaciones Internacionales y Derecho internacional público, analista del Indo-Pacífico, China y Japón y autor de «El eje del mundo que viene» (Ariel). Contacto para medios.">
 <meta name="keywords" content="experto Indo-Pacífico, analista geopolítica China Japón, profesor relaciones internacionales, tertuliano geopolítica, El eje del mundo que viene">
 <meta name="author" content="Juan Luis López Aranguren">
 <link rel="canonical" href="[URL DEL SITIO]/">
 <meta property="og:type" content="profile">
+<meta property="og:url" content="[URL DEL SITIO]/">
+<meta property="og:site_name" content="Juan Luis López Aranguren">
 <meta property="og:title" content="Juan Luis López Aranguren · Indo-Pacífico, China, Japón y orden global">
 <meta property="og:description" content="Profesor de Relaciones Internacionales y Derecho internacional público. Autor de «El eje del mundo que viene» (Ariel, 2026).">
 <meta property="og:image" content="[URL DEL SITIO]/img/og.jpg">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@jlopezar">
+<meta name="twitter:title" content="Juan Luis López Aranguren · Indo-Pacífico, China, Japón y orden global">
+<meta name="twitter:description" content="Profesor de Relaciones Internacionales y Derecho internacional público. Autor de «El eje del mundo que viene» (Ariel, 2026).">
 <meta name="twitter:image" content="[URL DEL SITIO]/img/og.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%232a47c9'/%3E%3Ccircle cx='32' cy='32' r='29' fill='none' stroke='%23c93a2a' stroke-width='3'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='white' text-anchor='middle'%3EJL%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,6 +46,7 @@
 </head>
 <body>
 <!--BODY-->
+<a class="skip" href="#libro">Saltar al contenido</a>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#inicio"><b>López Aranguren</b></a>
@@ -56,7 +63,7 @@
     <div class="tools">
       <button class="chip-btn menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">MENÚ</button>
       <button class="chip-btn" id="langBtn" aria-label="Change language to English">EN</button>
-      <button class="chip-btn" id="themeBtn" aria-label="Cambiar tema claro u oscuro">◐</button>
+      <button class="chip-btn" id="themeBtn" aria-label="Cambiar tema claro u oscuro"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"/></svg></button>
     </div>
   </div>
 </header>
@@ -204,7 +211,7 @@
         <p>Nueve convenciones consecutivas de la International Studies Association, un año de investigación en Japón con la Japan Foundation y docencia invitada en tres continentes.</p>
       </div>
       <div class="map-wrap">
-        <div class="map-box">{{WORLD}}</div>
+        <div class="map-col"><div class="map-box" id="mapBox">{{WORLD}}</div><p class="mono map-hint">Deslice el mapa para ver el resto del mundo.</p></div>
         <div>
           <div class="place-card" id="placeCard" aria-live="polite">
             <span class="eyebrow" id="placeKind">Japón</span>
@@ -253,7 +260,7 @@
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">Imágenes</span>
-        <h2>En plató, en antena y en el aula</h2>
+        <h2>En plató, en antena y en presentaciones</h2>
       </div>
       <div class="gallery" id="gallery"></div>
     </div>
@@ -314,6 +321,14 @@
         <!-- LinkedIn: añada aquí su perfil
         <a href="https://www.linkedin.com/in/[SU PERFIL]" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">LinkedIn</span></a> -->
       </div>
+      <!-- Formulario de contacto opcional (Formspree, sin servidor propio). Cree un formulario en formspree.io,
+           sustituya [ID DEL FORMULARIO] y quite las marcas de comentario:
+      <form class="form" action="https://formspree.io/f/[ID DEL FORMULARIO]" method="POST">
+        <label>Nombre<input name="nombre" required></label>
+        <label>Email<input type="email" name="email" required></label>
+        <label>Mensaje<textarea name="mensaje" rows="4" required></textarea></label>
+        <button class="btn solid" type="submit">Enviar</button>
+      </form> -->
     </div>
   </section>
 </main>

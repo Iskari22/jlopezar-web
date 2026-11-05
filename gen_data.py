@@ -9,6 +9,8 @@ wb = openpyxl.load_workbook(XLSX, data_only=True)
 def s(v):
     if v is None: return ""
     if isinstance(v, (dt.datetime, dt.date)): return v.strftime("%d/%m/%Y")
+    # Excel convierte una duración escrita como «14:46» en una hora (14:46:00): se recupera el texto original
+    if isinstance(v, dt.time): return f"{v.hour}:{v.minute:02d}" if not v.second else v.strftime("%H:%M:%S").lstrip("0")
     return str(v).strip()
 
 def to_iso(txt, default_year=2026):
@@ -147,12 +149,15 @@ for r in wa.iter_rows(min_row=4, values_only=True):
 articulos.append(dict(fecha="2026-05-13", medio="Global Affairs (Universidad de Navarra)", genero="Artículo", titulo="El siglo del Indo-Pacífico se decide en el mar frente a China",
                       tema="Indo-Pacífico / China", resumen="Por qué la competición por el orden del siglo XXI se juega en las rutas marítimas del Indo-Pacífico.",
                       url="https://www.unav.edu/es/web/global-affairs/el-siglo-del-indo-pacifico-se-decide-en-el-mar-frente-a-china", soporte="Web", impresa=""))
-for f, medio, t in [("2022-01-01", "El Mundo", "Las islas Senkaku y la integridad territorial de Japón"),
-                    ("2022-01-01", "The Conversation", "Rushdie y Averroes frente a los fanatismos"),
-                    ("2016-01-01", "Policy Forum (Asia & The Pacific Policy Society, ANU)", "Seoul and Tokyo's New Security Axis"),
-                    ("2014-01-01", "La Vanguardia", "El elefante blanco de Hong Kong"),
-                    ("2014-01-01", "La Vanguardia", "La nueva familia de los libres")]:
-    articulos.append(dict(fecha=f, medio=medio, genero="Artículo", titulo=t, tema="", resumen="", url="", soporte="", impresa="", soloAnio=True))
+# Artículos antiguos. Solo se pone URL si se ha localizado la página original (ver README).
+for f, medio, t, u in [("2022-01-01", "El Mundo", "Las islas Senkaku y la integridad territorial de Japón", ""),
+                    ("2022-01-01", "The Conversation", "Rushdie y Averroes frente a los fanatismos",
+                     "https://theconversation.com/rushdie-y-averroes-frente-a-los-fanatismos-189711"),
+                    ("2016-01-01", "Policy Forum (Asia & The Pacific Policy Society, ANU)", "Seoul and Tokyo's New Security Axis",
+                     "https://www.policyforum.net/seoul-tokyos-new-security-axis/"),
+                    ("2014-01-01", "La Vanguardia", "El elefante blanco de Hong Kong", ""),
+                    ("2014-01-01", "La Vanguardia", "La nueva familia de los libres", "")]:
+    articulos.append(dict(fecha=f, medio=medio, genero="Artículo", titulo=t, tema="", resumen="", url=u, soporte="", impresa="", soloAnio=True))
 articulos.sort(key=lambda a: a["fecha"], reverse=True)
 
 def dump(name, obj):

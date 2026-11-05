@@ -52,7 +52,7 @@ window.MEDIOS = [
   "url": "https://www.youtube.com/watch?v=hLTCHbSUARY",
   "yt": "hLTCHbSUARY",
   "t": 0,
-  "duracion": "14:46:00",
+  "duracion": "14:46",
   "tema": "Geopolítica (tertulia) - Parte 2",
   "destacado": false
  },

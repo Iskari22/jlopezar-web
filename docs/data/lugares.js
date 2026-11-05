@@ -1,0 +1,34 @@
+// Ciudades del mapa «Por el mundo». tipo: "conf" (congresos), "est" (estancias) o "doc" (docencia).
+// IMPORTANTE: el orden debe coincidir con el atributo data-i de los puntos del mapa (svg-world.svg).
+// Si añade o quita ciudades, regenere el mapa (ver README).
+window.LUGARES = [
+ {"ciudad":"Honolulu","pais":"EE. UU.","lat":21.31,"lon":-157.86,"tipo":"conf","que":"ISA, 61.ª Convención Anual (2020, ponencia aceptada; convención suspendida por la COVID-19)"},
+ {"ciudad":"San Francisco","pais":"EE. UU.","lat":37.77,"lon":-122.42,"tipo":"conf","que":"ISA, Convención Anual (2024): diplomacia digital de Japón en América Latina; IA y seguridad en el Indo-Pacífico"},
+ {"ciudad":"Las Vegas","pais":"EE. UU.","lat":36.17,"lon":-115.14,"tipo":"conf","que":"ISA, Convención Anual (2021, virtual): nacionalismo y orden liberal asiático en el conflicto Senkaku/Diaoyu"},
+ {"ciudad":"Chicago","pais":"EE. UU.","lat":41.88,"lon":-87.63,"tipo":"conf","que":"ISA, Convención Anual (2025): IA en la cooperación del Indo-Pacífico; herramientas digitales para la investigación en RRII"},
+ {"ciudad":"Nashville","pais":"EE. UU.","lat":36.16,"lon":-86.78,"tipo":"conf","que":"ISA, 63.ª Convención Anual (2022): el giro estratégico de la UE hacia el Indo-Pacífico"},
+ {"ciudad":"Columbus","pais":"EE. UU.","lat":39.96,"lon":-83.0,"tipo":"conf","que":"ISA, 67.ª Convención Anual (2026): «Back to the Fundamentals»"},
+ {"ciudad":"Montreal","pais":"Canadá","lat":45.5,"lon":-73.57,"tipo":"conf","que":"ISA, Convención Anual (2023) y conferencia invitada en McGill University (2023)"},
+ {"ciudad":"Princeton","pais":"EE. UU.","lat":40.35,"lon":-74.66,"tipo":"est","que":"Visiting Scholar, Princeton Institute for International and Regional Studies (2022)"},
+ {"ciudad":"Ciudad de México","pais":"México","lat":19.33,"lon":-99.19,"tipo":"doc","que":"Seminario invitado, UNAM (2024)"},
+ {"ciudad":"Santiago de Chile","pais":"Chile","lat":-33.44,"lon":-70.65,"tipo":"doc","que":"Estancia y seminarios de posgrado, Pontificia Universidad Católica de Chile (2025)"},
+ {"ciudad":"Londres","pais":"Reino Unido","lat":51.52,"lon":-0.13,"tipo":"est","que":"Estancia de investigación, SOAS, University of London (2012)"},
+ {"ciudad":"Dundee","pais":"Reino Unido","lat":56.46,"lon":-2.97,"tipo":"est","que":"Estancia de investigación, Abertay University (2016)"},
+ {"ciudad":"Bruselas","pais":"Bélgica","lat":50.85,"lon":4.35,"tipo":"est","que":"Estancia, Brussels School of International Studies y Parlamento Europeo"},
+ {"ciudad":"Lisboa","pais":"Portugal","lat":38.72,"lon":-9.14,"tipo":"doc","que":"Seminarios sobre seguridad en el Indo-Pacífico, Universidade de Lisboa (ISCSP / Instituto do Oriente) (2023)"},
+ {"ciudad":"Covilhã","pais":"Portugal","lat":40.28,"lon":-7.5,"tipo":"doc","que":"Seminario invitado, Universidade da Beira Interior (2023)"},
+ {"ciudad":"Oñati","pais":"España","lat":43.03,"lon":-2.41,"tipo":"doc","que":"Profesor invitado, International Institute for the Sociology of Law: módulo «The Indo-Pacific» (2025)"},
+ {"ciudad":"Madrid","pais":"España","lat":40.42,"lon":-3.7,"tipo":"conf","que":"Presentación y debate en Casa Asia, Jornadas Sino-Europeas de Eurodefense (2026)"},
+ {"ciudad":"Chambéry","pais":"Francia","lat":45.57,"lon":5.92,"tipo":"doc","que":"Profesor en el BIP Erasmus+ «The Decline of International Solidarity», Université Savoie Mont Blanc, alianza UNITA (2026)"},
+ {"ciudad":"Roma","pais":"Italia","lat":41.9,"lon":12.5,"tipo":"doc","que":"Docencia en el máster de Seguridad Europea, LUISS Guido Carli (2023, 2024)"},
+ {"ciudad":"Rijeka","pais":"Croacia","lat":45.33,"lon":14.44,"tipo":"conf","que":"CEEISA–ISA European Convention, Universidad de Rijeka (2024)"},
+ {"ciudad":"Nueva Delhi","pais":"India","lat":28.54,"lon":77.17,"tipo":"est","que":"Estancias de investigación, Centre for East Asian Studies, Jawaharlal Nehru University (2019–2021)"},
+ {"ciudad":"Pekín","pais":"China","lat":39.95,"lon":116.31,"tipo":"est","que":"Estancia de investigación, Beijing Foreign Studies University"},
+ {"ciudad":"Tokio","pais":"Japón","lat":35.71,"lon":139.72,"tipo":"conf","que":"ISA Asia-Pacific, Universidad de Waseda (2023): ponencia, presidente y comentarista de sesión; Dokkyo University"},
+ {"ciudad":"Minamiuonuma (Niigata)","pais":"Japón","lat":37.07,"lon":138.88,"tipo":"est","que":"Investigador visitante, International University of Japan (GSIR) — Japan Foundation Fellowship (2016–2017)"},
+ {"ciudad":"Osaka","pais":"Japón","lat":34.82,"lon":135.52,"tipo":"est","que":"Investigador visitante, Osaka University y OSIPP — Japan Foundation Fellowship (2016–2017)"},
+ {"ciudad":"Kobe","pais":"Japón","lat":34.69,"lon":135.2,"tipo":"est","que":"Investigador visitante, Facultad de Derecho, Kobe University (2019)"},
+ {"ciudad":"Kioto","pais":"Japón","lat":35.01,"lon":135.77,"tipo":"conf","que":"AAS-in-Asia (2020); Diploma en Lengua y Estudios Japoneses, Kyoto University of Foreign Studies (2007)"},
+ {"ciudad":"Auckland","pais":"Nueva Zelanda","lat":-36.85,"lon":174.76,"tipo":"est","que":"Estancia de investigación, University of Auckland (2014)"}
+]
+;

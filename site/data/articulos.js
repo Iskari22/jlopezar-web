@@ -239,7 +239,7 @@ window.ARTICULOS = [
   "titulo": "Rushdie y Averroes frente a los fanatismos",
   "tema": "",
   "resumen": "",
-  "url": "",
+  "url": "https://theconversation.com/rushdie-y-averroes-frente-a-los-fanatismos-189711",
   "soporte": "",
   "impresa": "",
   "soloAnio": true
@@ -251,7 +251,7 @@ window.ARTICULOS = [
   "titulo": "Seoul and Tokyo's New Security Axis",
   "tema": "",
   "resumen": "",
-  "url": "",
+  "url": "https://www.policyforum.net/seoul-tokyos-new-security-axis/",
   "soporte": "",
   "impresa": "",
   "soloAnio": true
